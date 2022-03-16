@@ -14,7 +14,7 @@ export class Service {
   async getFileInfo(file) {
     // file = home/index.html
     const fullFilePath = join(publicDirectory, file);
-    // valida se existe, senão existe = erro!!
+    // valida se existe, se não existe estoura erro!!
     await fsPromises.access(fullFilePath);
     const fileType = extname(fullFilePath);
     return {

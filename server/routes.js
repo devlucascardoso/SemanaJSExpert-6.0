@@ -12,7 +12,7 @@ async function routes(request, response) {
 
   if (method === "GET" && url === "/") {
     response.writeHead(302, {
-      "Location": location.home,
+      Location: location.home,
     });
 
     return response.end();
@@ -23,8 +23,8 @@ async function routes(request, response) {
 
     // padrão do response é text/html
     // response.writeHead(200, {
-    // "Content-Type": "text/html",
-    // });
+    //   'Content-Type': 'text/html'
+    // })
 
     return stream.pipe(response);
   }
@@ -34,13 +34,13 @@ async function routes(request, response) {
 
     // padrão do response é text/html
     // response.writeHead(200, {
-    // "Content-Type": "text/html",
-    // });
+    //   'Content-Type': 'text/html'
+    // })
 
     return stream.pipe(response);
   }
 
-  // files
+  //files
   if (method === "GET") {
     const { stream, type } = await controller.getFileStream(url);
     const contentType = CONTENT_TYPE[type];
