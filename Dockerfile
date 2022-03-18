@@ -3,7 +3,7 @@ FROM node:17-slim
 RUN apt-get update \
   && apt-get install -y sox libsox-fmt-mp3
 
-# lisbox-fmt-all
+# libsox-fmt-all
 
 WORKDIR /spotify-radio/
 
